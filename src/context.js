@@ -28,6 +28,7 @@ export const AppProvider = ({ children }) => {
       value={{
         isSubMenuOpen,
         isSidebarOpen,
+        location,
         openSubMenu,
         closeSubMenu,
         openSidebar,
