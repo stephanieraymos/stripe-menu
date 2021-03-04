@@ -12,7 +12,7 @@ const Navbar = () => {
   } = useGlobalContext();
 
   const displaySubMenu = (e) => {
-    const page = e.target.textContext;
+    const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     // tempBtn sum of left + right divided by 2 to get the center:
     const center = (tempBtn.left + tempBtn.right) / 2;
