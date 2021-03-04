@@ -12,8 +12,13 @@ const Navbar = () => {
   } = useGlobalContext();
 
   const displaySubMenu = (e) => {
-    console.log("Yo");
-    openSubMenu();
+    const page = e.target.textContext;
+    const tempBtn = e.target.getBoundingClientRect();
+    // tempBtn sum of left + right divided by 2 to get the center:
+    const center = (tempBtn.left + tempBtn.right) / 2;
+    // tempBtn bottom minus 3 to lift it 3 px up:
+    const bottom = tempBtn.bottom - 3;
+    openSubMenu(page, { center, bottom });
   };
   return (
     <>
@@ -27,13 +32,19 @@ const Navbar = () => {
           </div>
           <ul className="nav-links">
             <li>
-              <button className="link-btn" onMouseOver={displaySubMenu}>products</button>
+              <button className="link-btn" onMouseOver={displaySubMenu}>
+                products
+              </button>
             </li>
             <li>
-              <button className="link-btn" onMouseOver={displaySubMenu}>developers</button>
+              <button className="link-btn" onMouseOver={displaySubMenu}>
+                developers
+              </button>
             </li>
             <li>
-              <button className="link-btn" onMouseOver={displaySubMenu}>company</button>
+              <button className="link-btn" onMouseOver={displaySubMenu}>
+                company
+              </button>
             </li>
           </ul>
           <button className="btn signin-btn">Sign in</button>
